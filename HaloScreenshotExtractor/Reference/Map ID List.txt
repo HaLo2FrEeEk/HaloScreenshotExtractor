@@ -1,0 +1,108 @@
+﻿///////////////////////////////////////////////
+// Here is a list of all the Map IDs for all //
+// The games.  This is just for reference.   //
+///////////////////////////////////////////////
+
+Halo 3:
+  Campaign:
+    3005 - Arrival
+    3110 - Cortana
+    3020 - Crow's Nest
+    3050 - Floodgate
+    3120 - Halo
+    3010 - Sierra 117
+    3070 - The Ark
+    3100 - The Covenant
+    3040 - The Storm
+    3030 - Tsavo Highway
+
+  Multiplayer:
+    490 - Assembly
+    470 - Avalanche
+    520 - Blackout
+    740 - Citadel
+    600 - Cold Storage
+    300 - Construct
+    350 - Epitaph
+    480 - Foundry
+    590 - Ghost Town
+    320 - Guardian
+    720 - Heretic
+    310 - High Ground
+    330 - Isolation
+    30 - Last Resort
+    440 - Longshore
+    380 - Narrows
+    500 - Orbital
+    580 - Rat's Nest
+    730 - Sandbox
+    400 - Sandtrap
+    360 - Snowbound
+    410 - Standoff
+    390 - The Pit
+    340 - Valhalla
+
+Halo 3: ODST:
+  Campaign:
+    5300 - Coastal Highway
+    5200 - Data Hive
+    6150 - Kikowani Station
+    6120 - Kizingo Blvd.
+    5000 - Mombasa Streets
+    6140 - NMPD HQ
+    6130 - ONI Alpha Site
+    6100 - Tayari Plaza
+    6110 - Uplift Reserve
+
+  Firefight: // Added 10000 + Firefight identifier
+    16135 - Alpha Site
+    15206 - Chasm Ten
+    16104 - Crater
+    15007 - Crater (night)
+    15307 - Last Exit
+    16114 - Lost Platoon
+    15008 - Rally (night)
+    16125 - Rally Point
+    16134 - Security Zone
+    16145 - Windward
+
+Halo Reach Beta: // Added 10000 to each map id to differentiate between Beta and Retail
+  Multiplayer:
+    11080 - Boneyard
+    17000 - Overlook
+    11055 - Powerhouse
+    11000 - Sword Base
+    
+Halo: Reach:
+  Campaign:
+    5010 - Winter Contingency
+    5020 - ONI: Sword Base
+    5030 - Nightfall
+    5035 - Tip of the Spear
+    5045 - Long Night of Solace
+    5050 - Exodus
+    5052 - New Alexandria
+    5060 - The Package
+    5070 - The Pillar of Autumn
+    5080 - Lone Wolf
+
+  Firefight:
+    7000 - Overlook
+    7020 - Courtyard
+    7030 - Outpost
+    7040 - Waterfront
+    7060 - Beachhead
+    7080 - Holdout
+    7110 - Corvette
+    7130 - Glacier
+
+  Multiplayer:
+    1000 - Sword Base
+    1020 - Countdown
+    1035 - Boardwalk
+    1040 - Zealot
+    1055 - Powerhouse
+    1080 - Boneyard
+    1150 - Reflection
+    1200 - Spire
+    3006 - Forge World

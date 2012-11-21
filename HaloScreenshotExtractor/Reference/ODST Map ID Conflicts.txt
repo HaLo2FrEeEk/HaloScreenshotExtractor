@@ -1,0 +1,42 @@
+﻿/////////////////////////////////////////////////////////////////
+// These issues have been fixed by simply adding a 1 to the    //
+// Beginning of each map ID.  To read them, first determine    //
+// If the map is a firefight map, then add 10,000 to the       //
+// Map ID.  In addition, maps like Crater (night) and Rally    //
+// (night) have the same map ID's, even though they're both    //
+// Firefight maps.  I solve this by adding a unique identifier //
+// Located 8 bytes after the map ID in the BLF header.         //
+/////////////////////////////////////////////////////////////////
+
+Firefight:
+  Crater:           6100 (16104)
+  Lost Platoon:     6110 (16114)
+  Rally Point:      6120 (16125)
+  Security Zone:    6130 (16134)
+  Alpha Site:       6130 (16135)
+  Windward:         6140 (16145)
+  Chasm Ten:        5200 (15206)
+  Last Exit:        5300 (15307)
+  Crater (Night):   5000 (15007)
+  Rally (Night):    5000 (15008)
+
+Campaign:
+  Mombasa Streets:  5000
+  Tayari Plaza:     6100
+  Uplift Reserve:   6110
+  Kizingo Blvd.:    6120
+  ONI Alpha Site:   6130
+  NMPD HQ:          6140
+  Kikowani Stn.:    6150
+  Data Hive:        5200
+  Coastal Highway:  5300
+
+Conflicts:
+  6100 - Crater (FF), Tayari Plaza
+  6110 - Lost Platoon (FF), Uplift Reserve
+  6120 - Rally Point (FF), Kizingo Blvd.
+  6130 - Security Zone (FF), Alpha Site (FF), ONI Alpha Site
+  6140 - Windward (FF), NMPD HQ
+  5200 - Chasm Ten (FF), Data Hive
+  5300 - Last Exit (FF), Coastal Highway
+  5000 - Crater (Night) (FF), Rally Point (Night) (FF), Mombasa Streets

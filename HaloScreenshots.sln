@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaloScreenshots", "HaloScreenshotExtractor\HaloScreenshots.csproj", "{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CodeAnalysisDebug|Any CPU = CodeAnalysisDebug|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.CodeAnalysisDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.CodeAnalysisDebug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CF7593B-56D6-4879-8D0A-F9D7B598A17A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

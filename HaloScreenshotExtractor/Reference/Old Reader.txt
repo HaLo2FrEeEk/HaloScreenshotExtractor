@@ -1,0 +1,65 @@
+﻿//////////////////////////////////////////////////////////////
+// This is the old method that I used to read screenshots.  //
+// As you can see it was a pretty big process that mashed   //
+// Together all the different formats for Halo 3, ODST, and //
+// The Reach Beta.  With the new structure introduced in    //
+// The retail version of Reach I had to rethink how I did   //
+// Things, and you'll see the result in Misc/readFile.cs.   //
+// I kept this here for reference...and posterity.          //
+//////////////////////////////////////////////////////////////
+
+// Now we can start reading the actual BLF file
+br.BaseStream.Position = fileStart + 4;
+int blfLength = br.ReadBigInt32(); // I've got the length of the _blf block
+br.BaseStream.Position = fileStart + blfLength + 4;
+int chdrLength = br.ReadBigInt32(); // Length of the chdr block
+br.BaseStream.Position = fileStart + blfLength + 12;
+int blfVersion = br.ReadBigInt16();
+br.BaseStream.Position += 10; // Add 16 bytes to get the start of the screenshot title for Halo 3 and Halo 3: ODST.
+if (isReachBeta)
+{
+    br.BaseStream.Position += 120; // Add another 120 bytes to get to the start of the screenshot title in the Halo Reach Beta.
+}
+string shotTitle = Encoding.BigEndianUnicode.GetString(br.ReadBytes(32)).Trim('\0'); // Read the screenshot title in Big Endian Unicode and trim the nulls off the end.
+br.BaseStream.Position = fileStart + blfLength + 60; // This is where the mapID is located in Halo Reach Beta files
+if (!isReachBeta)
+{
+    br.BaseStream.Position += 180; // And another 180 bytes to get to where it's located in Halo 3 / ODST files 
+}
+int mapID = br.ReadBigInt32();
+if (gameID == 1)
+{
+    br.BaseStream.Position += 8;
+    byte fireFight = br.ReadByte();
+    if (fireFight != 0)
+    {
+        mapID += 10000 + fireFight;
+    }
+}
+else if (gameID == 2)
+{
+    mapID += 10000;
+}
+br.BaseStream.Position = fileStart + blfLength + chdrLength + 4;
+int scncLength = 0; // The scnc block doesn't exist in the Halo Reach Beta...
+if ((blfVersion >= versions[gameID]) && !isReachBeta)
+{
+    scncLength = br.ReadBigInt32(); // But it does exist in Halo 3 and Halo 3: ODST, so read its length.
+}
+br.BaseStream.Position = fileStart + blfLength + chdrLength + scncLength + 12;
+int jpegLength = br.ReadBigInt32(); // And finally the length of the actual JPEG file.
+int jpegOffset = (int)br.BaseStream.Position;
+
+screenshotItem screenshot = new screenshotItem() {
+    fileName = finfo.FullName,
+    shotTitle = shotTitle,
+    gameID = gameID,
+    mapID = mapID,
+    blfVersion = blfVersion,
+    hashTable = hashTable,
+    numBlocks = numBlocks,
+    headerStart = (fileStart - 49152) / 4096,
+    headerLength = blfLength + chdrLength + scncLength + 16,
+    jpegOffset = jpegOffset,
+    jpegLength = jpegLength,
+    fileTime = fileTime};

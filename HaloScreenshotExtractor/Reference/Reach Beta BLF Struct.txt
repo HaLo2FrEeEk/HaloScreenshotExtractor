@@ -1,0 +1,37 @@
+﻿struct ssReachBetaBLFHeader
+{
+    // _blf block
+    string word_BLF; // Len 4
+    int blfLength; // 48
+    short unk8;
+    short unk10;
+    short unk12; // Byte ordering definition?
+    string fileDescription; // Len 32
+    short blfPadding; // Always 00 00
+
+    // chdr block
+    string wordCHDR; // Len 4
+    int chdrLength; // 704
+    short unk56;
+    short unk58;
+    short versionIdent; // 9730
+    byte[] unk62; // Len 46
+    int mapID;
+    byte[] unk112; // Len 24
+    string shotAuthor1; // Len 16
+    byte[] unk152; // Len 8
+    int shotTimestamp;
+    byte[] unk164; // Len 8
+    string shotAuthor2; // Len 16
+    byte[] unk188; // Len 4
+    string shotTitle; // Len 256, Big Endian Unicode
+    string shotDescription; // Len 256, Big Endian Unicode
+    byte[] unk704; // Len 48
+
+    // scnd block
+    string wordSCND; // Len 4
+    int shotSizeWithFooter;
+    short unk760;
+    short unk762;
+    int shotSizeWithoutFooter;
+}

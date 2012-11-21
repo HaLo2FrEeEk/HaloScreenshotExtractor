@@ -1,0 +1,13 @@
+﻿Offset 60 in the blf header.
+
+Halo 3:
+ Pre-Title Update 1: 2E 4F (int16: 11855)
+Post-Title Update 1: 2E 7E (int16: 11902)
+Post-Title Update 2: 2F 26 (int16: 12070) // First version with SCNC Block
+
+Halo 3: ODST:
+Current: 36 47 (int16: 13895)
+
+Halo Reach:
+  Beta: 26 02 (int16: 9730)
+Retail: 2E 54 (int16: 11860)

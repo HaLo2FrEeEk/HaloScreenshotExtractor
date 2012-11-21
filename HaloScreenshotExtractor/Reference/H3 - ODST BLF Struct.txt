@@ -1,0 +1,44 @@
+﻿struct ssBLFHeader
+{
+    // _blf block        
+    string word_BLF; // Len 4
+    int blfLength; // 48
+    short unk8;
+    short unk10;
+    short unk12; // Byte ordering definition?
+    string fileDescription; // Len 32
+    short blfPadding; // Always 00 00
+
+    // chdr block
+    string wordCHDR; // Len 4
+    int chdrLength; // 264
+    short unk56;
+    short unk58;
+    short versionIdent;
+    byte[] unk62; // Len 10
+    string shotTitle; // Len 32, Big Endian Unicode
+    string shotDescription; // Len 128
+    string shotAuthor; // Len 16
+    byte[] unk248; // Len 20
+    int shotSizeWithoutFooter1;
+    byte[] unk272; // Len 4, seems to always be 00 00 00 00
+    int shotTimestamp; // Unix timestamp
+    byte[] unk280; // Len 8, seems to always be either 00 00 00 00 00 00 00 01 or 00 00 00 00 FF FF FF FF
+    int mapID;
+    byte[] unk292; // Len 20
+
+    // scnc block, Does not exist in Halo 3 screenshots with versionIdent < 12070.
+    string wordSCNC; // Len 4
+    int scncLength; // 368
+    byte[] unk320; // Len 96
+    short shotHeight; // Ex. 1080
+    short shotWidth; // Ex. 1920
+    byte[] unk420; // Len 260
+
+    // scnd block
+    string wordSCND; // Len 4
+    int shotSizeWithFooter;
+    short unk688;
+    short unk690;
+    int shotSizeWithoutFooter2; // Same as above, obviously
+}
